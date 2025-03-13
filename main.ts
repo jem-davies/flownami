@@ -71,4 +71,6 @@ app.get("/board", function (_req, res) {
 
 const port = Deno.env.get("PORT") || 8080;
 app.listen(port);
-console.log(`Server is listening on port ${port}`);
+if (import.meta.main) {
+  console.log(`Server running at http://localhost:${port}`);
+}
